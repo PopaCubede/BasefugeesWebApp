@@ -1,0 +1,103 @@
+﻿@model BasefugeesWebApp.DAL.DTO.UserModel
+
+<h4>UserModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Signin">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+                    <label asp-for="User_Id" class="control-label"></label>
+                    <input asp-for="User_Id" class="form-control" />
+                    <span asp-validation-for="User_Id" class="text-danger"></span>
+                </div>*@
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Firstname" class="control-label"></label>
+                <input asp-for="Firstname" class="form-control" />
+                <span asp-validation-for="Firstname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location" class="control-label"></label>
+                <input asp-for="Location" class="form-control" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                    <label asp-for="Type" class="control-label"></label>
+                    <input asp-for="Type" class="form-control" />
+                    <span asp-validation-for="Type" class="text-danger"></span>
+                </div>*@
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                    <label asp-for="Facebook_id" class="control-label"></label>
+                    <input asp-for="Facebook_id" class="form-control" />
+                    <span asp-validation-for="Facebook_id" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Facebook_token" class="control-label"></label>
+                    <input asp-for="Facebook_token" class="form-control" />
+                    <span asp-validation-for="Facebook_token" class="text-danger"></span>
+                </div>*@
+            @*<div class="form-group">
+                    <label asp-for="Status" class="control-label"></label>
+                    <input asp-for="Status" class="form-control" />
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>*@
+            <div class="form-group">
+                <label asp-for="Bio" class="control-label"></label>
+                <input asp-for="Bio" class="form-control" />
+                <span asp-validation-for="Bio" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                    <label asp-for="Twitter_id" class="control-label"></label>
+                    <input asp-for="Twitter_id" class="form-control" />
+                    <span asp-validation-for="Twitter_id" class="text-danger"></span>
+                </div>*@
+            <div class="form-group">
+                <label asp-for="Opentocontact" class="control-label"></label>
+                <input asp-for="Opentocontact" class="form-control" />
+                <span asp-validation-for="Opentocontact" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Experience" class="control-label"></label>
+                <input asp-for="Experience" class="form-control" />
+                <span asp-validation-for="Experience" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                    <label asp-for="ResetPasswordToken" class="control-label"></label>
+                    <input asp-for="ResetPasswordToken" class="form-control" />
+                    <span asp-validation-for="ResetPasswordToken" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ResetPasswordExpires" class="control-label"></label>
+                    <input asp-for="ResetPasswordExpires" class="form-control" />
+                    <span asp-validation-for="ResetPasswordExpires" class="text-danger"></span>
+                </div>*@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-controller="Home" asp-action="Index">Back to Home</a>
+</div>

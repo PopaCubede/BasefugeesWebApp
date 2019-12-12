@@ -2,17 +2,23 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BasefugeesWebApp.DAL;
+using BasefugeesWebApp.Helpers;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 
 namespace BasefugeesWebApp
 {
     public class Startup
     {
+        public const string CookieScheme = "BasefugeesCookieScheme";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -23,6 +29,42 @@ namespace BasefugeesWebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
+
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
+            {
+                // Set a short timeout for easy testing.
+                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                options.Cookie.HttpOnly = true;
+                // Make the session cookie essential
+                options.Cookie.IsEssential = true;
+            });
+
+            services.Configure<AppSettingsModel>(Configuration.GetSection("WebConfig"));
+            services.AddHttpClient<UnreliableEndpointCallerService>("BasefugeesAPI", c =>
+                {
+                    c.BaseAddress = new Uri(Configuration.GetSection("WebConfig:ApiUrl").Value);
+                    c.DefaultRequestHeaders.Add("Content-Type", "application/json");
+                });
+
+            services.AddAuthentication(CookieScheme) // Sets the default scheme to cookies
+                .AddCookie(CookieScheme, options =>
+                {
+                    options.AccessDeniedPath = "/account/denied";
+                    options.LoginPath = "/account/login";
+                });
+
+            // Example of how to customize a particular instance of cookie options and
+            // is able to also use other services.
+            services.AddSingleton<IConfigureOptions<CookieAuthenticationOptions>, ConfigureMyCookie>();
+
+            //services.AddSingleton<ISearchClient, SearchClient>();
+            //services.AddSingleton<ISearchClient>(new SearchClient(
+            //    Configuration.GetSection("WebConfig:AlgoliaAppID").Value,
+            //    Configuration.GetSection("WebConfig:AlgoliaAPIKey").Value));
+
             services.AddControllersWithViews();
         }
 
@@ -44,7 +86,9 @@ namespace BasefugeesWebApp
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

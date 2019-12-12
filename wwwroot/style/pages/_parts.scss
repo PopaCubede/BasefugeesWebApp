@@ -1,0 +1,31 @@
+﻿/*------------------------------------------------------------------
+  	[Parts]
+------------------------------------------------------------------*/
+@import '../mixins'; // Mixins
+@import '../variables'; // Variables
+
+#ProjectListTextArea {
+    margin-top: 50px;
+    max-width: 500px;
+    min-width: 200px;
+}
+
+.card {
+    padding: 10px;
+    border: 4px solid $color-base;
+    height: auto;
+    display: block;
+    overflow-wrap: break-word;
+
+    h3 {
+        padding: 0;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 18px;
+    }
+
+    .row {
+        margin-right: -14px;
+        margin-left: -14px;
+    }
+}

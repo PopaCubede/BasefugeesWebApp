@@ -1,0 +1,39 @@
+﻿/*------------------------------------------------------------------
+  	[Header]
+------------------------------------------------------------------*/
+@import '../mixins'; // Mixins
+@import '../variables'; // Variables
+
+.navbar-brand.img {
+    max-height: 16px;
+}
+
+nav {
+    position: absolute;
+    width: 100%;
+    background: #fff;
+    z-index: 99;
+}
+
+.nav > li > a {
+    &:hover {
+        background-color: lighten($color-heading, 7%) !important;
+        color: #fff !important;
+    }
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    min-height: 50px;
+    z-index: 99;
+}
+
+.navbar-inverse {
+    background-color: $color-heading;
+    border: none;
+}
+
+.admin-nav-btn {
+    background-color: $color-base;
+}

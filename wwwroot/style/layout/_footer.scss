@@ -1,0 +1,14 @@
+﻿/*------------------------------------------------------------------
+  	[Footer]
+------------------------------------------------------------------*/
+@import '../mixins'; // Mixins
+@import '../variables'; // Variables
+
+#footer {
+    /*margin-top: -20px;*/
+    background-color:#000;
+    color:#fff;
+    padding:15px 50px 15px 50px;
+    text-align:right;
+    border: 1px solid #000;
+}

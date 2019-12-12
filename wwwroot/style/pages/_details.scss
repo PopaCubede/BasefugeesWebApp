@@ -1,0 +1,71 @@
+﻿/*------------------------------------------------------------------
+  	[Details]
+------------------------------------------------------------------*/
+@import '../mixins'; // Mixins
+@import '../variables'; // Variables
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+#DetailsDisplay {
+    h3 {
+        padding: 10px 0 5px 0;
+        margin: 0;
+    }
+
+    input {
+        display: inline-block;
+    }
+}
+
+.display-status {
+    input {
+        display: none;
+    }
+
+    label {
+        display: inline-block;
+        margin: 0 0 -1px;
+        padding: 5px 15px;
+        font-weight: 600;
+        text-align: center;
+        color: #bbb;
+        border: 1px solid transparent;
+        font-size: 20px;
+    }
+
+        label:before {
+            font-family: fontawesome;
+            font-weight: normal;
+            margin-right: 10px;
+        }
+
+        label[for*='1']:before {
+            color: dodgerblue;
+            content: '\f04b';
+        }
+
+        label[for*='2']:before {
+            color: limegreen;
+            content: '\f00c';
+        }
+
+        label[for*='3']:before {
+            color: red;
+            content: '\f00d';
+        }
+
+        label:hover {
+            color: #888;
+            cursor: pointer;
+        }
+
+    input:checked + label {
+        color: $color-base;
+        cursor: default;
+    }
+
+    #tab1:checked ~ #content1,
+    #tab2:checked ~ #content1,
+    #tab3:checked ~ #content1 {
+        display: block;
+    }
+}

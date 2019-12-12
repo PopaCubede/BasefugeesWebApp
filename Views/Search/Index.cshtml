@@ -1,0 +1,149 @@
+﻿@model IEnumerable<BasefugeesWebApp.DAL.AlgoliaModels.AlgoliaProjectModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Search</h1>
+
+
+<section>
+    <form asp-controller="Search" asp-action="Index" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal" role="form">
+        <div class="form-group">
+            @*<label class="col-md-2 control-label">Search</label>*@
+            <div class="col-md-10">
+                <input type="text" name="searchEntered" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-default">Search</button>
+            </div>
+        </div>
+    </form>
+</section>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ObjectID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShortDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Privacy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SupportNeeded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ObjectID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ShortDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Privacy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SupportNeeded)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Url)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Location)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Type)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", "Project", new { id = item.ObjectID })
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@*<div class="container-fluid" style="padding-left: 0; padding-right: 0;">
+        <header class="navbar navbar-static-top aisdemo-navbar">
+            <a href="lib/instantsearch.js/instantsearch.development.js"
+               class="is-logo">
+                <img src="logo-is.png" width="40" />
+            </a>
+            <a href="./" class="logo">A</a> <i class="fa fa-search"></i>
+            <div id="search-box"></div>
+        </header>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-7 aisdemo--left-column">
+                <div class="aisdemo-filters">
+                    <div class="row aisdemo-filter">
+                        <div class="col-sm-2 aisdemo-filter-title">Dates</div>
+                        <div class="col-sm-3">
+                            <input class="date form-control" value="10/30/3015" disabled />
+                        </div>
+                        <div class="col-sm-3">
+                            <input class="date form-control" value="10/30/3015" disabled />
+                        </div>
+                        <div class="col-sm-3"><div id="guests"></div></div>
+                    </div>
+
+                    <div class="row aisdemo-filter">
+                        <div class="col-sm-2 aisdemo-filter-title">Room Type</div>
+                        <div id="room_types"></div>
+                    </div>
+
+                    <div class="row aisdemo-filter">
+                        <div class="col-sm-2 aisdemo-filter-title">Price Range</div>
+                        <div class="col-sm-9" id="price"></div>
+                    </div>
+                </div>
+
+                <div class="row"><div id="stats"></div></div>
+            </div>
+
+            <div class="col-sm-5 aisdemo--right-column"><div id="map"></div></div>
+        </div>
+    </div>
+
+    <div class="container-fluid" id="results">
+        <div class="row"><div id="hits"></div></div>
+        <div class="row">
+            <div id="pagination"></div>
+            <div class="thank-you">
+                Data from <a href="https://www.airbnb.com/">airbnb.com</a>, user pics
+                from <a href="https://randomuser.me/">randomuser.me</a>
+            </div>
+        </div>
+    </div>*@
