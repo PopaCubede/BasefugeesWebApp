@@ -45,7 +45,7 @@ namespace BasefugeesWebApp
             services.Configure<AppSettingsModel>(Configuration.GetSection("WebConfig"));
             services.AddHttpClient<UnreliableEndpointCallerService>("BasefugeesAPI", c =>
                 {
-                    c.BaseAddress = new Uri(Configuration.GetSection("WebConfig:ApiUrl").Value);
+                    c.BaseAddress = new Uri(Constants.ApiUrl);
                     c.DefaultRequestHeaders.Add("Content-Type", "application/json");
                 });
 
@@ -62,8 +62,8 @@ namespace BasefugeesWebApp
 
             //services.AddSingleton<ISearchClient, SearchClient>();
             //services.AddSingleton<ISearchClient>(new SearchClient(
-            //    Configuration.GetSection("WebConfig:AlgoliaAppID").Value,
-            //    Configuration.GetSection("WebConfig:AlgoliaAPIKey").Value));
+            //    Constants.AlgoliaAppID,
+            //    Constants.AlgoliaAPIKey));
 
             services.AddControllersWithViews();
         }

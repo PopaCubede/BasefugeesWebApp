@@ -21,9 +21,9 @@ namespace BasefugeesWebApp.Controllers
         {
             _logger = logger;
             _appSettings = app;
-            WebConfig.ApiUrl = _appSettings.Value.ApiUrl;
-            WebConfig.AlgoliaAppID = _appSettings.Value.AlgoliaAppID;
-            WebConfig.AlgoliaAPIKey = _appSettings.Value.AlgoliaAPIKey;
+            WebConfig.ApiUrl = Constants.ApiUrl;
+            WebConfig.AlgoliaAppID = Constants.AlgoliaAppID;
+            WebConfig.AlgoliaAPIKey = Constants.AlgoliaAPIKey;
         }
 
         public async Task<IActionResult> Index()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using BasefugeesWebApp.Helpers;
 using BasefugeesWebApp.Models;
 
 namespace BasefugeesWebApp.DAL.ApiClients
@@ -17,7 +18,7 @@ namespace BasefugeesWebApp.DAL.ApiClients
 
         static ApiClientFactory()
         {
-            _apiUri = new Uri(WebConfig.ApiUrl);
+            _apiUri = new Uri(Constants.ApiUrl);
         }
 
         public static ApiClient Instance => _restClient.Value;

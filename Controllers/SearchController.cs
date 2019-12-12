@@ -25,8 +25,8 @@ namespace BasefugeesWebApp.Controllers
         {
             _logger = logger;
             _appSettings = app;
-            WebConfig.AlgoliaAPIKey = _appSettings.Value.AlgoliaAPIKey;
-            WebConfig.AlgoliaAppID = _appSettings.Value.AlgoliaAppID;
+            WebConfig.AlgoliaAPIKey = Constants.AlgoliaAPIKey;
+            WebConfig.AlgoliaAppID = Constants.AlgoliaAppID;
             _searchClient = new SearchClient(WebConfig.AlgoliaAPIKey, WebConfig.AlgoliaAppID);
         }
 

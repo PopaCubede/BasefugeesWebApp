@@ -25,11 +25,11 @@ namespace BasefugeesWebApp.Controllers
         {
             _logger = logger;
             _appSettings = app;
-            WebConfig.ApiUrl = _appSettings.Value.ApiUrl;
-            WebConfig.AlgoliaAppID = _appSettings.Value.AlgoliaAppID;
-            WebConfig.AlgoliaAPIKey = _appSettings.Value.AlgoliaAPIKey;
-            WebConfig.LocalStoragePassword = _appSettings.Value.LocalStoragePassword;
-            WebConfig.LocalStorageSalt = _appSettings.Value.LocalStorageSalt;
+            WebConfig.ApiUrl = Constants.ApiUrl;
+            WebConfig.AlgoliaAppID = Constants.AlgoliaAppID;
+            WebConfig.AlgoliaAPIKey = Constants.AlgoliaAPIKey;
+            WebConfig.LocalStoragePassword = Constants.LocalStoragePassword;
+            WebConfig.LocalStorageSalt = Constants.LocalStorageSalt;
 
             // setup a configuration with encryption enabled (defaults to 'false')
             // note that adding EncryptionSalt is optional, but recommended
