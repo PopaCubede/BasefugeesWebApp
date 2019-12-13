@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BasefugeesWebApp.DAL.ApiClients;
+using BasefugeesWebApp.DAL.DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,9 +19,10 @@ namespace BasefugeesWebApp.Controllers
         }
 
         // GET: Project/Details/5
-        public ActionResult Details(int id)
+        public async Task<ActionResult> Details(string name)
         {
-            return View();
+            var project = await ApiClientFactory.Instance.GetProject(name);
+            return View(project);
         }
 
         // GET: Project/Create
@@ -32,11 +34,12 @@ namespace BasefugeesWebApp.Controllers
         // POST: Project/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<ActionResult> Create([FromForm] ProjectModel formObj)
         {
             try
             {
                 // TODO: Add insert logic here
+                var result = await ApiClientFactory.Instance.CreateProject(formObj);
 
                 return RedirectToAction(nameof(Index));
             }

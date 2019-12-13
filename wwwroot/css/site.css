@@ -7,6 +7,10 @@ a.navbar-brand {
     word-break: break-all;
 }
 
+.navbar-brand {
+    color: dodgerblue;
+}
+
 /* Provide sufficient contrast against white background */
 
 a {

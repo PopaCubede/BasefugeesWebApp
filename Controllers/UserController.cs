@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BasefugeesWebApp.DAL.ApiClients;
+using BasefugeesWebApp.DAL.DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,9 +12,10 @@ namespace BasefugeesWebApp.Controllers
     public class UserController : Controller
     {
         // GET: User
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View();
+            var users = await ApiClientFactory.Instance.GetUsers();
+            return View(users);
         }
 
         // GET: User/Details/5

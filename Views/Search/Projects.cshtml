@@ -1,0 +1,183 @@
+﻿@model IEnumerable<BasefugeesWebApp.DAL.DTO.ProjectModel>
+
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Search</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Project_Id)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShortDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Url)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SupportNeeded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Featured)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Privacy)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Box1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Box2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Vertical)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NbEmployees)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FacebookUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LinkedinUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TwitterUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GitUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AngellistUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BloggerUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.WebsiteUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.InstagramUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.YoutubeUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserRole)
+                </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.Project_Id)
+                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ShortDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Location)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Stage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Url)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SupportNeeded)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Featured)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Privacy)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Box1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Box2)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Vertical)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NbEmployees)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FacebookUrl)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LinkedinUrl)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TwitterUrl)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GitUrl)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AngellistUrl)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BloggerUrl)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.WebsiteUrl)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.InstagramUrl)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.YoutubeUrl)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserRole)
+                        </td>*@
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new {/* id=item.PrimaryKey */}) |
+                        @Html.ActionLink("Details", "Details", new { name = item.Name }) |
+                        @Html.ActionLink("Delete", "Delete", new {/* id=item.PrimaryKey */})
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

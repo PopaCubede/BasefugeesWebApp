@@ -15,7 +15,7 @@ namespace BasefugeesWebApp.DAL.ApiClients
 
         public async Task<ProjectModel> GetProject(string projectName)
         {
-            return await GetAsync<ProjectModel>("/projects/getProject/" + projectName);
+            return await GetAsync<ProjectModel>("/projects/" + projectName);
         }
 
         public async Task<ProjectModel> CreateProject(ProjectModel model)

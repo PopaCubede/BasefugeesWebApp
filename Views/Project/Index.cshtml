@@ -12,9 +12,9 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Project_Id)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -30,9 +30,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Url)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Description)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Type)
             </th>
@@ -45,7 +45,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Privacy)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Box1)
             </th>
             <th>
@@ -86,7 +86,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.UserRole)
-            </th>
+            </th>*@
             <th></th>
         </tr>
     </thead>
@@ -96,9 +96,9 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>
+                    @*<td>
                         @Html.DisplayFor(modelItem => item.Project_Id)
-                    </td>
+                    </td>*@
                     <td>
                         @Html.DisplayFor(modelItem => item.Name)
                     </td>
@@ -114,9 +114,9 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Url)
                     </td>
-                    <td>
+                    @*<td>
                         @Html.DisplayFor(modelItem => item.Description)
-                    </td>
+                    </td>*@
                     <td>
                         @Html.DisplayFor(modelItem => item.Type)
                     </td>
@@ -129,7 +129,7 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Privacy)
                     </td>
-                    <td>
+                    @*<td>
                         @Html.DisplayFor(modelItem => item.Box1)
                     </td>
                     <td>
@@ -170,10 +170,10 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.UserRole)
-                    </td>
+                    </td>*@
                     <td>
                         @Html.ActionLink("Edit", "Edit", new {/* id=item.PrimaryKey */}) |
-                        @Html.ActionLink("Details", "Details", new {/* id=item.PrimaryKey */}) |
+                        @Html.ActionLink("Details", "Details", new { name=item.Name }) |
                         @Html.ActionLink("Delete", "Delete", new {/* id=item.PrimaryKey */})
                     </td>
                 </tr>
