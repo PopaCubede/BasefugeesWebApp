@@ -1,0 +1,106 @@
+﻿/*------------------------------------------------------------------
+  	[The "base.scss" contains basic default element styles
+  		(colors, typography, margins & padding).]
+------------------------------------------------------------------*/
+@import '../mixins'; // Mixins
+@import '../variables'; // Variables
+
+body {
+    font-family: 'Ruluko', sans-serif;
+    font-size: 16px;
+}
+
+#Body-content {
+    min-height: calc(100vh - 54px);
+    padding-top: 70px;
+    padding-bottom: 52px;
+    /*margin-bottom: -52px;*/
+    margin-left: 5%;
+    margin-right: 5%;
+    max-width: 100vw;
+}
+
+.nav a {
+    color: #ffffff !important;
+    font-size: larger;
+}
+
+.navbar-header a {
+    color: #ffffff !important;
+    padding-right: 100px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Ruluko', sans-serif;
+}
+
+h1 {
+    line-height: 120px;
+    text-transform: uppercase;
+    color: $color-base;
+    font-size: 50px;
+    font-weight: 900 !important;
+}
+
+.page-title {
+    color: $color-heading;
+    text-align: left;
+    margin-top: 0px;
+    font-size: 40px;
+    font-weight: 500;
+    font-family: 'Pacifico' !important;
+}
+
+h3 {
+    line-height: 35px;
+    padding-bottom: 20px;
+}
+
+h4 {
+    line-height: 40px;
+    padding-bottom: 40px;
+}
+
+p {
+    font-weight: 300;
+    line-height: 30px;
+    padding-bottom: 20px;
+}
+
+.space-pad {
+    padding-bottom: 50px;
+}
+
+
+.for-full-back {
+    /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    /* IE 5-7 */
+    filter: alpha(opacity=90);
+    /* Netscape */
+    -moz-opacity: 0.9;
+    /* Safari 1.x */
+    -khtml-opacity: 0.9;
+    /* Good browsers */
+    opacity: 0.9;
+}
+
+section {
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.center-div {
+    width: 40%;
+    height: 250px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}

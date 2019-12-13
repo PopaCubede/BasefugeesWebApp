@@ -1,0 +1,36 @@
+﻿/*------------------------------------------------------------------
+    [Button]
+------------------------------------------------------------------*/
+@import '../mixins'; // Mixins
+@import '../variables'; // Variables
+
+.btn-theme {
+    @include button();
+}
+
+.btn-white-brd {
+    @include button-color($color-white, $color-heading, transparent, $color-white, 1px, rgba(255,255,255,.3), transparent);
+}
+
+.btn-default-bg {
+    @include button-color($color-heading, $color-white, #dcdcdc, $color-base, 0, transparent, transparent);
+}
+
+.btn-base-bg {
+    @include button-color($color-white, $color-base, $color-base, transparent, 1, transparent, $color-base);
+    @include button-size(15px, 500, 5px 10px);
+}
+
+.btn-theme-sm {
+    @include button-size(13px, 600, 15px 30px);
+}
+
+.btn-details {
+    @include button-color($color-base, $color-heading, transparent, $color-white, 0, transparent, transparent);
+    @include button-size(15px, 600, 2px)
+}
+
+.btn-text {
+    @include button-color($color-base, $color-heading, transparent, $color-white, 0, transparent, transparent);
+    @include button-size(24px, 500, 2px)
+}

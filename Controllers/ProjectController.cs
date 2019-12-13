@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BasefugeesWebApp.DAL.ApiClients;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,9 +11,10 @@ namespace BasefugeesWebApp.Controllers
     public class ProjectController : Controller
     {
         // GET: Project
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View();
+            var projects = await ApiClientFactory.Instance.GetProjects();
+            return View(projects);
         }
 
         // GET: Project/Details/5

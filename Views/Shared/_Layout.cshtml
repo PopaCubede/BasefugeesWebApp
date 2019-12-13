@@ -6,8 +6,10 @@
     <title>@ViewData["Title"] - Basefugees</title>
 
     <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
+        @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />*@
+        <link rel="stylesheet" href="~/content/lib/bootstrap/dist/css/bootstrap.css" />
+        @*<link rel="stylesheet" href="~/css/site.css" />*@
+        <link rel="stylesheet" href="~/content/css/site.css" />
         <link rel="stylesheet"
               href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
         <link rel="stylesheet"
@@ -16,10 +18,14 @@
               href="https://fonts.googleapis.com/css?family=Roboto" />
     </environment>
     <environment exclude="Development">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        @*<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />*@
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+              asp-fallback-href="~/content/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        @*<link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />*@
+        <link rel="stylesheet" href="~/content/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
 <body>
@@ -38,14 +44,14 @@
                 <li class="nav-item">
                     <a asp-area="" asp-controller="Home" asp-action="MyClaims" class="nav-link">My Claims</a>
                 </li>
-                <li class="nav-item">
-                    <a asp-area="" asp-controller="Search" asp-action="Index" class="nav-link">Search</a>
-                </li>
-                <li class="nav-item">
-                    <a asp-area="" asp-controller="Project" asp-action="Index" class="nav-link">Projects</a>
-                </li>
                 @if (User.Identity.IsAuthenticated)
                 {
+                    <li class="nav-item">
+                        <a asp-area="" asp-controller="Search" asp-action="Index" class="nav-link">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-area="" asp-controller="Project" asp-action="Index" class="nav-link">Projects</a>
+                    </li>
                     <li class="nav-item">
                         <a asp-area="" asp-controller="Account" asp-action="Logout" class="nav-link">Logout</a>
                     </li>
@@ -60,16 +66,16 @@
                     </li>
                 }
                 @*<li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>*@
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </li>*@
             </ul>
             @*<form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -87,30 +93,50 @@
     </div>
 
     <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        @*<script src="~/lib/jquery/dist/jquery.js"></script>*@
+        <script src="~/content/lib/jquery/dist/jquery.js"></script>
+        @*<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>*@
+        <script src="~/content/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/scriptjs@2.5.9/dist/script.min.js"></script>
-        <script src="~/lib/instantsearch.js/instantsearch.development.js"></script>
-        <script src="~/lib/algoliasearch/algoliasearch.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
+        @*<script src="~/lib/instantsearch.js/instantsearch.development.js"></script>*@
+        <script src="~/content/lib/instantsearch.js/instantsearch.development.js"></script>
+        @*<script src="~/lib/algoliasearch/algoliasearch.js"></script>*@
+        <script src="~/content/lib/algoliasearch/algoliasearch.js"></script>
+        @*<script src="~/js/site.js" asp-append-version="true"></script>*@
+        <script src="~/content/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+        @*<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
                 asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
                 asp-fallback-test="window.jQuery"
                 crossorigin="anonymous"
                 integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+        </script>*@
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/content/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
         </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        @*<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
                 asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
+        </script>*@
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+                asp-fallback-src="~/content/lib/bootstrap/dist/js/bootstrap.min.js"
                 asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
                 crossorigin="anonymous"
                 integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
         </script>
         <script src="https://cdn.jsdelivr.net/npm/scriptjs@2.5.9/dist/script.min.js"></script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-        <script src="~/lib/instantsearch.js/instantsearch.production.min.js"></script>
-        <script src="~/lib/algoliasearch/algoliasearch.min.js"></script>
+        @*<script src="~/js/site.min.js" asp-append-version="true"></script>*@
+        <script src="~/content/js/site.min.js" asp-append-version="true"></script>
+        @*<script src="~/lib/instantsearch.js/instantsearch.production.min.js"></script>*@
+        <script src="~/content/lib/instantsearch.js/instantsearch.production.min.js"></script>
+        @*<script src="~/lib/algoliasearch/algoliasearch.min.js"></script>*@
+        <script src="~/content/lib/algoliasearch/algoliasearch.min.js"></script>
     </environment>
     @RenderSection("Scripts", required: false)
 </body>

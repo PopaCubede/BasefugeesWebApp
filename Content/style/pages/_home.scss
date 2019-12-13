@@ -1,0 +1,66 @@
+﻿/*------------------------------------------------------------------
+  	[Home]
+------------------------------------------------------------------*/
+@import '../mixins'; // Mixins
+@import '../variables'; // Variables
+
+#home {
+    padding: 0px;
+
+    .head-main {
+        font-weight: 900 !important;
+        padding: 100px 20px 20px 20px;
+    }
+
+    a.home-img {
+        background-position: center center;
+        background-size: cover;
+        display: inline-block;
+        width: 128px;
+        height: 128px;
+        text-indent: -9999px; /* hides the link text */
+    }
+
+    a.plastic-bottle {
+        background-image: url(../../Images/plastic-bottle.png);
+    }
+
+    a.pet-bottle {
+        background-image: url(../../Images/pet-bottle.png);
+    }
+
+    a.blueprint {
+        background-image: url(../../Images/blueprint.png);
+    }
+
+    a.project {
+        background-image: url(../../Images/project.png);
+    }
+
+    a.machine {
+        background-image: url(../../Images/machine.png);
+    }
+
+    a.husky {
+        background-image: url(../../Images/logo-husky.gif);
+    }
+
+    a.parts {
+        background-image: url(../../Images/parts.png);
+    }
+
+    a.details {
+        background-image: url(../../Images/details.png);
+    }
+}
+
+.center-home {
+    width: 75%;
+    height: 700px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
