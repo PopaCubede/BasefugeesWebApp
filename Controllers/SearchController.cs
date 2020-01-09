@@ -18,19 +18,14 @@ namespace BasefugeesWebApp.Controllers
     public class SearchController : Controller
     {
         private readonly IOptions<AppSettingsModel> _appSettings;
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<SearchController> _logger;
 
         private readonly ISearchClient _searchClient;
 
-        public SearchController(ILogger<HomeController> logger, IOptions<AppSettingsModel> app
-            //, ISearchClient searchClient
-        )
+        public SearchController(ILogger<SearchController> logger, IOptions<AppSettingsModel> app)
         {
             _logger = logger;
             _appSettings = app;
-            WebConfig.AlgoliaAPIKey = Constants.AlgoliaAPIKey;
-            WebConfig.AlgoliaAppID = Constants.AlgoliaAppID;
-            _searchClient = new SearchClient(WebConfig.AlgoliaAPIKey, WebConfig.AlgoliaAppID);
         }
 
         // GET: Search
@@ -61,16 +56,6 @@ namespace BasefugeesWebApp.Controllers
 
                     return View($"Users", usersResult);
                 }
-
-
-                //// Asynchronous
-                //var projectsIndex = _searchClient.InitIndex("projects-test");
-                //var result = await projectsIndex.SearchAsync<AlgoliaProjectModel>(new Query(searchEntered)
-                //{
-                //    AttributesToRetrieve = new List<string> { "name", "description" },
-                //    HitsPerPage = 50
-                //});
-                //IEnumerable<AlgoliaProjectModel> projectsAlgolia = result.Hits;
             }
 
             return View();

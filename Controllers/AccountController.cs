@@ -18,10 +18,10 @@ namespace BasefugeesWebApp.Controllers
     public class AccountController : Controller
     {
         private readonly IOptions<AppSettingsModel> _appSettings;
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<AccountController> _logger;
         public static LocalStorage EncryptedStorage;
 
-        public AccountController(ILogger<HomeController> logger, IOptions<AppSettingsModel> app)
+        public AccountController(ILogger<AccountController> logger, IOptions<AppSettingsModel> app)
         {
             _logger = logger;
             _appSettings = app;

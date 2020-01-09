@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Algolia.Search.Clients;
 using BasefugeesWebApp.DAL;
 using BasefugeesWebApp.Helpers;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -65,8 +66,10 @@ namespace BasefugeesWebApp
 
             //services.AddSingleton<ISearchClient, SearchClient>();
             //services.AddSingleton<ISearchClient>(new SearchClient(
-            //    Constants.AlgoliaAppID,
-            //    Constants.AlgoliaAPIKey));
+            //    Configuration.GetValue<string>("WebConfig:AlgoliaAppID"),
+            //    Configuration.GetValue<string>("WebConfig:AlgoliaAPIKey")));
+                //Constants.AlgoliaAppID,
+                //Constants.AlgoliaAPIKey));
 
             services.AddControllersWithViews();
         }
