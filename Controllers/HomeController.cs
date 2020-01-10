@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using BasefugeesWebApp.DAL.ApiClients;
+using BasefugeesWebApp.DAL.DTO;
 using BasefugeesWebApp.Helpers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -29,7 +31,14 @@ namespace BasefugeesWebApp.Controllers
         public async Task<IActionResult> Index()
         {
             //var data = await ApiClientFactory.Instance.GetUsers();
-            return View();
+            var displayedProjects = new List<ProjectModel>();
+            var projects = await ApiClientFactory.Instance.GetFeaturedProjects();
+            displayedProjects.Add(projects[0]);
+            displayedProjects.Add(projects[1]);
+            displayedProjects.Add(projects[2]);
+            return View(displayedProjects);
+
+            //return View();
         }
 
         [Authorize]

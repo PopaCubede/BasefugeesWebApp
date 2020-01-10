@@ -8,6 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="compilerconfig.json" />
+    <Content Remove="wwwroot\images\TestGif\giphy (12).gif" />
+    <Content Remove="wwwroot\images\TestGif\giphy (13).gif" />
+    <Content Remove="wwwroot\images\TestGif\giphy (14).gif" />
+    <Content Remove="wwwroot\images\TestGif\giphy (5).gif" />
+    <Content Remove="wwwroot\images\TestGif\giphy (6).gif" />
+    <Content Remove="wwwroot\images\TestGif\giphy (9).gif" />
+    <Content Remove="wwwroot\images\TestGif\Project1.gif" />
+    <Content Remove="wwwroot\images\TestGif\ReDI School of Digital Integration.gif" />
+    <Content Remove="wwwroot\images\TestGif\Shifra- www.shifra.io.gif" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Content\css\site.css" />
     <None Remove="Content\favicon.ico" />
     <None Remove="Content\images\banner1.svg" />
@@ -394,6 +407,23 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.10" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Content\images\TestGif\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="compilerconfig.json" />
+    <None Include="wwwroot\images\TestGif\giphy (12).gif" />
+    <None Include="wwwroot\images\TestGif\giphy (13).gif" />
+    <None Include="wwwroot\images\TestGif\giphy (14).gif" />
+    <None Include="wwwroot\images\TestGif\giphy (5).gif" />
+    <None Include="wwwroot\images\TestGif\giphy (6).gif" />
+    <None Include="wwwroot\images\TestGif\giphy (9).gif" />
+    <None Include="wwwroot\images\TestGif\Project1.gif" />
+    <None Include="wwwroot\images\TestGif\ReDI School of Digital Integration.gif" />
+    <None Include="wwwroot\images\TestGif\Shifra- www.shifra.io.gif" />
   </ItemGroup>
 
 

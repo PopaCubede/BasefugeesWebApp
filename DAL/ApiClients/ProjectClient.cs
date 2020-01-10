@@ -12,6 +12,10 @@ namespace BasefugeesWebApp.DAL.ApiClients
         {
             return await GetAsync<List<ProjectModel>>("/projects");
         }
+        public async Task<List<ProjectModel>> GetFeaturedProjects()
+        {
+            return await GetAsyncFeatured<List<ProjectModel>>("/projects?featured=true");
+        }
 
         public async Task<ProjectModel> GetProject(string projectName)
         {
