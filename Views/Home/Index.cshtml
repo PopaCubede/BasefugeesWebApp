@@ -1,8 +1,48 @@
-﻿@{
+﻿@model List<BasefugeesWebApp.DAL.DTO.ProjectModel>
+@addTagHelper *, BasefugeesWebApp
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
+@if (User.Identity.IsAuthenticated)
+{
+    @*<div>
+            @await Component.InvokeAsync("Card", new { qtyCards = 3, isFeatured = true })
+        </div>*@
+    @*<div>
+            <vc:card qty-cards="3" is-featured="true">
+            </vc:card>
+        </div>*@
+}
+
 <div class="text-center">
+
     <h1 class="display-4">Welcome</h1>
+
+    <div class="row">
+        @foreach (var project in Model)
+        {
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="images/TestGif/@(project.Name).gif" class="card-img-top" alt="@(project.Name)">
+                    <div class="card-body">
+                        <h5 class="card-title">@project.Name</h5>
+                        <p class="card-text">@project.ShortDescription</p>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a asp-controller="Project" asp-action="Details" asp-route-name="@project.Name" class="btn btn-secondary-bg">Go to the project</a>
+                        }
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <a asp-controller="Account" asp-action="Login" class="btn btn-secondary-bg">Log in to know more</a>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>

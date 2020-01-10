@@ -1,0 +1,48 @@
+﻿@model List<BasefugeesWebApp.DAL.DTO.ProjectModel>
+
+@*@foreach (var project in Model)
+{
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@project.Name</h5>
+            <p class="card-text">@project.ShortDescription</p>
+            <a href="#" class="btn btn-primary">Go to the project</a>
+        </div>
+    </div>
+}*@
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@Model[0].Name</h5>
+                    <p class="card-text">@Model[0].ShortDescription</p>
+                    <a href="#" class="btn btn-primary">Go to the project</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@Model[1].Name</h5>
+                    <p class="card-text">@Model[1].ShortDescription</p>
+                    <a href="#" class="btn btn-primary">Go to the project</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@Model[2].Name</h5>
+                    <p class="card-text">@Model[2].ShortDescription</p>
+                    <a href="#" class="btn btn-primary">Go to the project</a>
+                </div>
+            </div>
+        </div>
+    </div>

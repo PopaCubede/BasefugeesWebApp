@@ -147,5 +147,24 @@ namespace BasefugeesWebApp.DAL.ApiClients
         {
             _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
+
+        private async Task<T> GetAsyncFeatured<T>(string requestUrl)
+        {
+            ForceHeaders();
+            var response = await _httpClient.GetAsync(requestUrl, HttpCompletionOption.ResponseHeadersRead);
+            response.EnsureSuccessStatusCode();
+            var data = await response.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<T>(data);
+        }
+
+        private void ForceHeaders()
+        {
+            var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoidGVzdEBlbWFpbC5jb20ifSwiaWF0IjoxNTM3ODAzODQ5fQ.WUShQiHt_OfUnUtscedgQqN9wWYjshEJNXIJTGu7CQc";
+
+            _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            _httpClient.DefaultRequestHeaders.Remove("Authorization");
+            _httpClient.DefaultRequestHeaders.Add("Authorization",
+                "Bearer " + token);
+        }
     }
 }

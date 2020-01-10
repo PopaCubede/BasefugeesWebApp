@@ -21,6 +21,11 @@
     @include button-size(15px, 500, 5px 10px);
 }
 
+.btn-secondary-bg {
+    @include button-color($color-white, $color-secondary, $color-secondary, transparent, 1, transparent, $color-secondary);
+    @include button-size(15px, 500, 5px 10px);
+}
+
 .btn-theme-sm {
     @include button-size(13px, 600, 15px 30px);
 }
