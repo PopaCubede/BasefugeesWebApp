@@ -8,6 +8,10 @@
     max-height: 40px;
 }
 
+.navbar-brand {
+    color: $color-secondary;
+}
+
 nav {
     position: absolute;
     width: 100%;
@@ -15,7 +19,7 @@ nav {
     z-index: 99;
 }
 
-.nav-link{
+.nav-link {
     color: $color-white;
 }
 

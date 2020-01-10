@@ -13,7 +13,7 @@
 /* eg: @include border-radius(3px); */
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 body {
-  font-family: 'Ruluko', sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 16px; }
 
 #Body-content {
@@ -37,7 +37,7 @@ body {
   text-align: center; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Ruluko', sans-serif; }
+  font-family: Roboto, sans-serif; }
 
 h1 {
   line-height: 120px;
@@ -170,6 +170,19 @@ section {
     background: transparent;
     border-color: #273952; }
 
+.btn-secondary-bg {
+  color: #fff;
+  background: #E9425E;
+  border-color: transparent;
+  border-width: 1;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 5px 10px; }
+  .btn-secondary-bg:hover, .btn-secondary-bg:focus, .btn-secondary-bg.focus {
+    color: #E9425E;
+    background: transparent;
+    border-color: #E9425E; }
+
 .btn-theme-sm {
   font-size: 13px;
   font-weight: 600;
@@ -226,6 +239,9 @@ section {
 /* eg: @include border-radius(3px); */
 .navbar-brand.img {
   max-height: 40px; }
+
+.navbar-brand {
+  color: #E9425E; }
 
 nav {
   position: absolute;
